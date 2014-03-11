@@ -5,22 +5,13 @@
 
 var docpadConfig = function() {
 
-    var addNewArticle = function(new_model) {
-
-        var collection = docpad.getCollection(new_model.attributes.section)
-
-        if(!collection) {
-            docpad.setCollection(new_model.attributes.section,
-                docpad.getCollection('articles')
-                .findAllLive({
-                    section: new_model.attributes.section
-                })
-                .on('add', function(model){
-                    model.setMetaDefaults({layout:'article'})
-                })
-            )
-        }
-
+    var createCollectionFor = function(new_model) {
+        docpad.setCollection(new_model.attributes.section,
+            docpad.getCollection('articles')
+            .findAllLive({
+                section: new_model.attributes.section
+            })
+        )
     }
 
     return {
@@ -54,8 +45,12 @@ var docpadConfig = function() {
                 section: {$exists: true}
             })
             .on('add', function(model){
-                model.setMetaDefaults({ignored: true})
-                addNewArticle(model)
+                var collection = docpad.getCollection(model.attributes.section)
+
+                if(!collection) {
+                    createCollectionFor(model)
+                }
+                model.setMetaDefaults({layout: 'article', write: false})
             })
         }
     }
