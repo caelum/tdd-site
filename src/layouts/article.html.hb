@@ -1,4 +1,4 @@
 <article>
-	<h2>{{document.title}}</h2>
+	<h3>{{document.title}}</h3>
 	<p>{{document.content}}<p>
 </article>

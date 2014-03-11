@@ -28,15 +28,22 @@ var docpadConfig = function() {
     documentsPaths: ['documents', 'articles'],
 
     templateData: {
-        article_collections: function() {
-            var collections = {}
+        article_groups: function(){
+            var groups = {}
+
             docpad.collections.forEach(function(collection){
                 if(collection.options.parentCollection.options.name == 'articles') {
-                    collections[collection.options.name] = (collection.toJSON())
+                    var article_group = ''
+                    var articles = collection.toJSON()
+                    articles.forEach(function(article){
+                        article_group += article.contentRendered
+                    })
+
+                    groups[collection.options.name] = article_group
                 }
             })
 
-            return collections
+            return groups
         }
     },
 

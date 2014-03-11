@@ -3,10 +3,10 @@ layout: page
 referencesOthers: true
 ---
 
-{{#each article_collections}}
+{{#each article_groups}}
+
 	<h2>{{@key}}</h2>
-	{{#each this}}
-  	<h3>{{this.title}}</h3>
-  	<p>{{this.content}}</p>
-	{{/each}}
+
+	{{{this}}}
+
 {{/each}}
