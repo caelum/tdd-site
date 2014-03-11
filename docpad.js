@@ -40,20 +40,16 @@ var docpadConfig = function() {
         }
     },
 
-    //TODO try not generating articles
-    // plugins: {
-    //     partials: {
-    //         partialsPath: 'articles'
-    //     }
-    // },
-
     collections: {
         articles: function() {
             return docpad.getCollection('html')
             .findAllLive({
                 section: {$exists: true}
             })
-            .on('add', addNewArticle)
+            .on('add', function(model){
+                model.setMetaDefaults({ignored: true})
+                addNewArticle(model)
+            })
         }
     }
 
