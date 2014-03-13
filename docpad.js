@@ -16,33 +16,40 @@ var docpadConfig = function() {
 
     return {
 
-    documentsPaths: ['documents', 'articles'],
+    documentsPaths: ['pages', 'articles'],
 
     templateData: {
-        article_groups: function(){
-            var groups = {}
+        sections: function(){
+            var sections = {}
 
             docpad.collections.forEach(function(collection){
                 if(collection.options.parentCollection.options.name == 'articles') {
-                    var article_group = ''
+                    var section = ''
                     var articles = collection.toJSON()
                     articles.forEach(function(article){
-                        article_group += article.contentRendered
+                        console.log('\n' + article.contentRendered)
+                        section += article.contentRendered
                     })
 
-                    groups[collection.options.name] = article_group
+                    sections[collection.options.name] = section
                 }
             })
 
-            return groups
+            return sections
         }
     },
 
     collections: {
         articles: function() {
             return docpad.getCollection('html')
+            .setFilter('isInArticles', function(model){
+                var isIn = model.attributes.fullPath.substr((__dirname+'/src/').length)
+                if(isIn.indexOf('articles') >= 0) return true
+                return false
+            })
             .findAllLive({
                 section: {$exists: true}
+
             })
             .on('add', function(model){
                 var collection = docpad.getCollection(model.attributes.section)
