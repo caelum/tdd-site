@@ -1,6 +1,5 @@
 // DocPad Configuration File
 // http://docpad.org/docs/config
-
 // Define the DocPad Configuration
 
 var docpadConfig = function() {
@@ -20,27 +19,26 @@ var docpadConfig = function() {
 
     templateData: {
         sections: function(){
-            var sections = {}
+            var sections = []
 
             docpad.collections.forEach(function(collection){
-                if(collection.options.parentCollection.options.name == 'articles') {
-                    var section = ''
+                var isArticleSection = collection.options.parentCollection.options.name == 'articles'
+                if(isArticleSection) {
+                    var section = {name: collection.options.name, content: ''}
                     var articles = collection.toJSON()
                     articles.forEach(function(article){
-                        console.log('\n' + article.contentRendered)
-                        section += article.contentRendered
+                        section.content += article.contentRendered
                     })
-
-                    sections[collection.options.name] = section
+                    sections.push(section)
                 }
             })
 
             return sections
         }
-    },
+    },//END templateData
 
     collections: {
-        articles: function() {
+        articles: function(){
             return docpad.getCollection('html')
             .setFilter('isInArticles', function(model){
                 var isIn = model.attributes.fullPath.substr((__dirname+'/src/').length)
