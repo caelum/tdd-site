@@ -1,0 +1,14 @@
+[
+	{	"name": "organizadores",
+		"people": [
+			{"name": "Fulano", "email": "fulano@quasi.com"},
+			{"name": "Cicrano", "email": "cicrano@quasi.com"}
+		]
+	},
+	{	"name": "colaboradores",
+		"people":	[
+			{"name": "Fulano", "email": "fulano@quasi.com"},
+			{"name": "Cicrano", "email": "cicrano@quasi.com"}
+		]
+	}
+]

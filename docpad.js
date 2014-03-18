@@ -34,6 +34,11 @@ var docpadConfig = function() {
             })
 
             return sections
+        },
+
+        participants: function(){
+            var participants = require('./participants_util.js')
+            return participants.getAll()
         }
     },//END templateData
 
