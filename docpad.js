@@ -65,7 +65,7 @@ var docpadConfig = function() {
             return docpad.getCollection('html')
             .setFilter('isInArticles', function(model){
                 var isIn = model.attributes.fullPath.substr((__dirname+'/src/').length)
-                if(isIn.indexOf('articles') >= 0) return true
+                if(isIn.indexOf('articles') == 0) return true
                 return false
             })
             .findAllLive({
@@ -83,7 +83,7 @@ var docpadConfig = function() {
         }
     }
 
-    }//END return
+    }//END config
 
 }()
 
