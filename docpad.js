@@ -2,6 +2,8 @@
 // http://docpad.org/docs/config
 // Define the DocPad Configuration
 
+var participants_util = require('./participants_util.js')
+
 var docpadConfig = function() {
 
     var createCollectionFor = function(new_model) {
@@ -54,10 +56,7 @@ var docpadConfig = function() {
             return sections
         },
 
-        participants: function(){
-            var participants = require('./participants_util.js')
-            return participants.getAll()
-        }
+        participants: participants_util.getAll()
     },//END templateData
 
     collections: {
