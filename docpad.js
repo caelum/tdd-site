@@ -17,6 +17,24 @@ var docpadConfig = function() {
 
     documentsPaths: ['pages', 'articles'],
 
+    plugins: {
+        handlebars: {
+            helpers: {
+                getStylesAndAdd: function(){
+                    //creating array from arguments
+                    var styles = Object.keys(arguments).map(function(key){
+                        return this[key]
+                    }, arguments)
+
+                    //removing hash object
+                    styles.pop()
+
+                    return docpad.getBlock('styles').add(styles).toHTML()
+                }
+            }
+        }
+    },
+
     templateData: {
         sections: function(){
             var sections = []

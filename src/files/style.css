@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  font: 300 100% 'Oxygen', 'sans-serif';
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+body {
+	color: #686868;
+}
+
