@@ -15,3 +15,77 @@ body {
 	color: #686868;
 }
 
+.container {
+	display: block;
+	width: 100%;
+	padding: 0 10%;
+}
+
+/*sections*/
+
+.section {
+	margin: 2em 0;
+}
+
+.section:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.title {
+	text-transform: capitalize;
+}
+
+.section-title {
+	font-size: 3em;
+	color: #000;
+	border-left: .3em solid;
+	padding-left: .2em;
+	line-height: 1.2em;
+}
+
+.section .section-title {
+	float: left;
+	width: 37%;
+	margin-right: 8%;
+	min-width: 220px;
+}
+
+.section:nth-child(2n+1) .section-title {
+	border-left-color: #cdcdcd;
+}
+
+.section:nth-child(2n) .section-title {
+	border-left-color: #3A6099;
+}
+
+footer .section-title {
+	border-left-color: #aeaeae;
+}
+
+.section-content {
+	overflow: hidden;
+	min-width: 320px;
+}
+
+article {
+	margin: 1em 0;
+}
+
+.article-heading {
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.article-content {
+	white-space: pre-line;
+}
+
+@media(max-width: 733px) {
+	.section .section-title {
+		width: 65%;
+		min-width: 320px;
+		margin-bottom: .5em;
+	}
+}

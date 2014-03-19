@@ -3,18 +3,19 @@ layout: page
 referencesOthers: true
 ---
 
-<main>
+<main class="container">
 	<section id="intro">
 		{{intro}}
 	</section>
 	{{#each sections}}
-		<section>
-			<h2>{{name}}</h2>
+		<section class="section">
+			<h2 class="title section-title">{{name}}</h2>
+			<div class="section-content"
 			{{{content}}}
 		</section>
 	{{/each}}
 </main>
-<footer>
+<footer class="container">
 	<section class='participants-container'>
 		<h2 class="title section-title">participantes</h2>
 		{{#each participants}}
