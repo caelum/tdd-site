@@ -1,14 +1,14 @@
 [
 	{	"name": "organizadores",
 		"people": [
-			{"name": "Fulano", "email": "fulano@quasi.com"},
-			{"name": "Cicrano", "email": "cicrano@quasi.com"}
+			{"name": "Fulano da Silva", "email": "fulano@quasi.com"},
+			{"name": "Cicrano do Santos", "email": "cicrano@quasi.com"}
 		]
 	},
 	{	"name": "colaboradores",
 		"people":	[
-			{"name": "Fulano", "email": "fulano@quasi.com"},
-			{"name": "Cicrano", "email": "cicrano@quasi.com"}
+			{"name": "Fulano da Silva", "email": "fulano@quasi.com"},
+			{"name": "Cicrano dos Santos", "email": "cicrano@quasi.com"}
 		]
 	}
 ]
