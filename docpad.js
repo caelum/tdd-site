@@ -56,7 +56,9 @@ var docpadConfig = function() {
             return sections
         },
 
-        participants: participants_util.getAll()
+        participants: participants_util.getAll(),
+
+        sponsors: require('./sponsors')
     },//END templateData
 
     collections: {

@@ -30,4 +30,26 @@ referencesOthers: true
 			</ul>
 		{{/each}}
 	</section>
+	<ul class="container sponsors">
+		{{#each sponsors}}
+			<li class="sponsor-box sponsor-{{@index}}">
+				<a href="{{website}}" class="sponsor-logo">
+					<img src="" alt="{{name}}" src="{{img}}" class="sponsor-logo">
+				</a>
+				<ul class="sponsor-call">
+					{{#each description}}
+						<li class="call-item">
+							<a href="{{url}}">{{content}}</a>
+						</li>
+					{{else}}
+						{{#with ../this}}
+						<li class="call-item">
+							<a href="{{website}}">{{../description}}</a>
+						</li>
+						{{/with}}
+					{{/each}}
+				</ul>
+			</li>
+		{{/each}}
+	</ul>
 </footer>
