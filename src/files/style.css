@@ -71,10 +71,6 @@ body {
 	border-left-color: #3A6099;
 }
 
-footer .section-title {
-	border-left-color: #aeaeae;
-}
-
 .section-content {
 	overflow: hidden;
 	min-width: 320px;
@@ -101,19 +97,28 @@ article {
 }
 
 /*participants*/
-.participants-container {
+.participants {
 	background: #464646;
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 5em;
 }
 
-.participants-container .title {
+.participants .title {
 	color: #ACABAB
 }
 
-.participants-container .label {
+footer .section-title {
+	border-left-color: #575757;
+}
+
+.participants .label {
 	margin-top: 5em;
+}
+
+.participants-text {
+	margin-top: 1.5em;
+	font-weight: 400;
 }
 
 .participant {

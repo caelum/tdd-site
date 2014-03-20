@@ -16,7 +16,7 @@ referencesOthers: true
 	{{/each}}
 </main>
 <footer>
-	<section class='container participants-container'>
+	<section class='container participants'>
 		<h2 class="title section-title">participantes</h2>
 		<p class="participants-text">Agradecemos a todos os colaboradores que de alguma forma participaram da criação.</p>
 		{{#each participants}}
