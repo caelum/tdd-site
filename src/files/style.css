@@ -138,7 +138,46 @@ footer .section-title {
 	border-radius: 50%;
 }
 
-.participants-text {
-	margin-top: 1.5em;
+/*sponsors*/
+
+.sponsors {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	background: #206297;
+	text-align: center;
+	letter-spacing: 2em;
+}
+
+.sponsor-box {
+	display: inline-block;
+	max-width: 33%;
+	vertical-align: top;
+	letter-spacing: normal;
+}
+
+.sponsor-logo {
+	display: block;
+	margin: 7vh auto;
+	text-align: center;
+	height: 53px;
+}
+
+.sponsor-call {
+	letter-spacing: .3em;
+}
+
+.call-item {
+	display: inline-block;
+	font-size: .85em;
+}
+
+.sponsor-box a{
+	color: #CFCFCF;
 	font-weight: 400;
+	text-decoration: none;
+	letter-spacing: normal;
+}
+
+.sponsor-box a:hover{
+	text-decoration: underline;
 }
