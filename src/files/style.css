@@ -1,9 +1,10 @@
 * {
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
   margin: 0;
   padding: 0;
   vertical-align: middle;
-  font: 300 100% 'Oxygen', 'sans-serif';
+  font: inherit;
 }
 
 ul,
@@ -11,7 +12,12 @@ ol {
 	list-style: none;
 }
 
+a img {
+	border: none;
+}
+
 body {
+	font: 300 100% 'Oxygen', 'sans-serif';
 	color: #686868;
 }
 
@@ -22,7 +28,7 @@ body {
 	padding-left: 10%;
 }
 
-.title {
+.title:first-letter {
 	text-transform: capitalize;
 }
 
