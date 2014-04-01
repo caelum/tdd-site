@@ -80,3 +80,23 @@
     ```
 
   - The ```description``` will be rendered as a list of links underneath the image specified by ```img```.
+
+## Writing an introduction
+  - An article will be rendered as the introduction if it has a header like this: 
+  
+  ```
+  ---
+  isIntro: true
+  ---
+  ```
+
+  - If you want to put a title in your introduction: 
+  
+  ```
+  ---
+  isIntro: true
+  title: lorem
+  ---
+  ```
+
+  - If you put a ```section``` property, it will be ignored.
