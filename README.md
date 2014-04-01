@@ -1,10 +1,10 @@
 # Quasi
 
 ## Getting it to work
-  1. Install node (tested with v0.10.26)
-  2. Clone quasi
-  3. Iside project root directory execute: npm install
-  4. To run locally, execute this on project root directory: docpad run
+  1. Install node (tested with v0.10.26);
+  2. Clone quasi;
+  3. Iside project root directory execute: npm install;
+  4. To run locally, execute this on project root directory: docpad run;
 
 ## Writing things
   - Any file in src/articles will be rendered as an article if it has a header like this:  
@@ -15,7 +15,7 @@
     ---  
     ```  
 
-    This article will be rendered inside a section foo in the main page
+    This article will be rendered inside a section foo in the main page.
 
   - You can add multiple articles to the same section and diff them with a heading property:
     
@@ -35,9 +35,9 @@
     ---
     ```
     
-    The heading will appear in the main page as a little title describing this piece of article
+    The heading will appear in the main page as a little title describing each piece of article.
 
-  - Article content goes after the header  
+  - Article content goes after the header:  
   
     ```
     ---
@@ -46,7 +46,7 @@
     Text goes here :)
     ```
   
-  - If you want to use html within your articles, be aware that your file has .html extension
+  - If you want to use html within your articles, be aware that your file has .html extension.
 
 ## Inserting Participants, authors and etc
   - There is a ```participants.js``` file, there we have a participants array. For each kind/group of participant follow this structure:  
@@ -59,7 +59,7 @@
       ]  
     }  
     ```  
-    Each participant in ```people``` will be rendered in the main page grouped and with the value of property ```name``` as a title
+    Each participant in ```people``` will be rendered in the main page grouped, with the value of property ```name``` as a title.
 
 ## Inserting sponsors
   - There is a ```sponsors.js``` file, there we have a sponsors array. For each kind of participant follow this structure: 
@@ -79,4 +79,4 @@
     },
     ```
 
-  - The ```description``` wil be rendered as a list of links underneath the image specified by ``ìmg```
+  - The ```description``` will be rendered as a list of links underneath the image specified by ```img```.
