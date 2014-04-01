@@ -46,7 +46,27 @@
     Text goes here :)
     ```
   
-  - If you want to use html within your articles, be aware that your file has .html extension.
+  - If you want to use html within your articles, be aware that your file has .html extension.  
+
+## Writing an introduction
+  - An article will be rendered as the introduction if it has a header like this: 
+  
+  ```
+  ---
+  isIntro: true
+  ---
+  ```
+
+  - If you want to put a title in your introduction: 
+  
+  ```
+  ---
+  isIntro: true
+  title: lorem
+  ---
+  ```
+
+  - If you put a ```section``` property, it will be ignored.
 
 ## Inserting Participants, authors and etc
   - There is a ```participants.js``` file, there we have a participants array. For each kind/group of participant follow this structure:  
@@ -81,22 +101,15 @@
 
   - The ```description``` will be rendered as a list of links underneath the image specified by ```img```.
 
-## Writing an introduction
-  - An article will be rendered as the introduction if it has a header like this: 
+## Site level information and configuration
+  - There is a ```site_config.js``` file, there you can set some site level informations like:
+ 
+    - ```name``` : The site name. It will appear in browser tabs and as the title in the main page.
+    
+    - ```company``` :
+      - ```img``` : Url for the company logo. It will appear next to the site title in the main page.
+      - ```name``` : The company name. It will appear in browser tabs and as a alt fot the company img.  
+    
+    - ```participants``` : Path to the participants file, default is ```participants.js```.
+    - ```sponsors``` : Path to the sponsors file, default is ```sponsors.js```.
   
-  ```
-  ---
-  isIntro: true
-  ---
-  ```
-
-  - If you want to put a title in your introduction: 
-  
-  ```
-  ---
-  isIntro: true
-  title: lorem
-  ---
-  ```
-
-  - If you put a ```section``` property, it will be ignored.
