@@ -22,11 +22,13 @@ referencesOthers: true
 	{{#each sections}}
 		<section class="section">
 			<h2 class="title section-title">{{name}}</h2>
-			<div class="section-content"
-			{{{content}}}
+			<div class="section-content">
+				{{{content}}}
+			</div>
 		</section>
 	{{/each}}
 </main>
+
 <footer>
 	<section class='container participants'>
 		<h2 class="title section-title">participantes</h2>
@@ -46,7 +48,7 @@ referencesOthers: true
 		{{#each sponsors}}
 			<li class="sponsor-box sponsor-{{@index}}">
 				<a href="{{website}}" class="sponsor-logo">
-					<img src="" alt="{{name}}" src="{{img}}" class="sponsor-logo">
+					<img alt="{{name}}" src="{{img}}" class="sponsor-logo">
 				</a>
 				<ul class="sponsor-call">
 					{{#each description}}
