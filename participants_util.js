@@ -1,5 +1,5 @@
 var crypto = require('crypto')
-var participants = require('./participants')
+var participants = require('./participants.json')
 
 function gravatar_url_for(email){
 	var md5sum = crypto.createHash('md5')

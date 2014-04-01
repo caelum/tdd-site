@@ -23,6 +23,7 @@ body {
 
 .container {
 	display: block;
+	position: relative;
 	width: 100%;
 	padding-right: 10%;
 	padding-left: 10%;
@@ -36,18 +37,62 @@ body {
 	font-weight: bold;
 }
 
+.text {
+	max-width: 50em;
+	text-align: justify;
+	white-space: pre-line;
+}
+
 .section-title {
 	font-size: 3em;
 	color: #000;
 	border-left: .3em solid;
 	padding-left: .2em;
 	line-height: 1.2em;
+	margin-bottom: .5em;
+}
+
+/* header */
+
+header {
+	margin: 5em 0;
+	display: inline-block;
+	letter-spacing: 3em;
+}
+
+.main-title {
+	display: inline-block;
+	letter-spacing: normal;
+	font-size: 20vmin;
+	vertical-align: middle;
+}
+
+.main-title:first-letter {
+	color: #3A6099;
+}
+
+.main-logo {
+	font-size: 2vmin;
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: middle;
+	opacity: .7;
+	height: 4em;
+	border-right: .2em solid #686868;
+	margin-bottom: 2em;
+}
+
+.main-logo:after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
 }
 
 /*sections*/
 
 .section {
-	margin: 2em 0;
+	margin: 5em 0;
 }
 
 .section:after {
@@ -61,6 +106,7 @@ body {
 	width: 37%;
 	margin-right: 8%;
 	min-width: 220px;
+	max-width: 12em;
 }
 
 .section:nth-child(2n+1) .section-title {
@@ -82,17 +128,13 @@ article {
 
 .article-heading {
 	font-size: 1.3em;
-}
-
-.article-content {
-	white-space: pre-line;
+	margin-bottom: .5em;
 }
 
 @media(max-width: 733px) {
 	.section .section-title {
 		width: 65%;
 		min-width: 320px;
-		margin-bottom: .5em;
 	}
 }
 
@@ -117,7 +159,6 @@ footer .section-title {
 }
 
 .participants-text {
-	margin-top: 1.5em;
 	font-weight: 400;
 }
 

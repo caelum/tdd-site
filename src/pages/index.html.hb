@@ -2,11 +2,23 @@
 layout: page
 referencesOthers: true
 ---
+<header class="container">
+	<a class="main-logo" href="http://caelum.com.br">
+		<img style="width: 170px" src="{{site.company.img}}" alt="{{site.company.name}}">
+	</a>
+	<h1 class="title main-title" style="margin-top: -.2em; margin-left: -.05em;">
+		{{site.title}}
+	</h1>
+</header>
 
 <main class="container">
-	<section id="intro">
-		{{intro}}
-	</section>
+	{{#with intro}}
+		<h2 class="title section-title">{{title}}</h2>
+		<article class="text intro">
+			{{content}}
+		</article>
+	{{/with}}
+
 	{{#each sections}}
 		<section class="section">
 			<h2 class="title section-title">{{name}}</h2>

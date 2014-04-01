@@ -2,6 +2,8 @@
 // http://docpad.org/docs/config
 // Define the DocPad Configuration
 
+var custom_site_config = require('./site_config.js')
+
 var participants_util = require('./participants_util.js')
 
 var docpadConfig = function() {
@@ -16,6 +18,8 @@ var docpadConfig = function() {
     }
 
     return {
+
+    filesPaths: ['assets'],
 
     documentsPaths: ['pages', 'articles'],
 
@@ -38,9 +42,17 @@ var docpadConfig = function() {
     },
 
     templateData: {
+        site: {
+            title: custom_site_config.name,
+            company: custom_site_config.company
+        },
+
+        intro: function(){
+            return docpad.database.findOne({isIntro: true}).toJSON()
+        },
+
         sections: function(){
             var sections = []
-
             docpad.collections.forEach(function(collection){
                 var isArticleSection = collection.options.parentCollection.options.name == 'articles'
                 if(isArticleSection) {
@@ -58,7 +70,7 @@ var docpadConfig = function() {
 
         participants: participants_util.getAll(),
 
-        sponsors: require('./sponsors')
+        sponsors: require('./sponsors.json')
     },//END templateData
 
     collections: {
@@ -70,19 +82,18 @@ var docpadConfig = function() {
                 return false
             })
             .findAllLive({
-                section: {$exists: true}
-
+                section: {$exists: true},
+                isIntro: {$exists: false}
             })
             .on('add', function(model){
                 var collection = docpad.getCollection(model.attributes.section)
-
                 if(!collection) {
                     createCollectionFor(model)
                 }
                 model.setMetaDefaults({layout: 'article', write: false})
             })
         }
-    }
+    } //END collections
 
     }//END config
 
