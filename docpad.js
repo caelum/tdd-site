@@ -4,8 +4,6 @@
 
 var custom_site_config = require('./site_config.js')
 
-var participants_util = require('./participants_util.js')
-
 var docpadConfig = function() {
 
     var createCollectionFor = function(new_model) {
@@ -64,13 +62,13 @@ var docpadConfig = function() {
                     sections.push(section)
                 }
             })
-
             return sections
         },
 
-        participants: participants_util.getAll(),
+        participants: custom_site_config.participants,
 
-        sponsors: require('./sponsors.json')
+        sponsors: custom_site_config.sponsors
+
     },//END templateData
 
     collections: {
