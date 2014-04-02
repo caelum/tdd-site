@@ -4,23 +4,23 @@ referencesOthers: true
 ---
 <header class="container">
 	<a class="main-logo" href="http://caelum.com.br">
-		<img style="width: 170px" src="{{site.company.img}}" alt="{{site.company.name}}">
+		<img style="width: 21.2vh" src="{{site.company.img}}" alt="{{site.company.name}}">
 	</a>
 	<h1 class="title main-title" style="margin-top: -.2em; margin-left: -.05em;">
 		{{site.title}}
 	</h1>
 </header>
 
-<main class="container">
+<main>
 	{{#with intro}}
-		<h2 class="title section-title">{{title}}</h2>
-		<article class="text intro">
-			{{content}}
-		</article>
+		<section class="container intro">
+			<h2 class="title">{{title}}</h2>
+			<article class="text">{{content}}</article>
+		</section>
 	{{/with}}
 
 	{{#each sections}}
-		<section class="section">
+		<section class="container articles-section">
 			<h2 class="title section-title">{{name}}</h2>
 			<div class="section-content">
 				{{{content}}}
@@ -39,7 +39,7 @@ referencesOthers: true
 				{{#each people}}
 					<li class="participant">
 						<span class="participant-name">{{name}}</span>
-						<img class="participant-img" src="{{img}}">
+						<img class="participant-img" src="{{img}}" width="80px" height="80px">
 				{{/each}}
 			</ul>
 		{{/each}}
@@ -48,7 +48,7 @@ referencesOthers: true
 		{{#each sponsors}}
 			<li class="sponsor-box sponsor-{{@index}}">
 				<a href="{{website}}" class="sponsor-logo">
-					<img alt="{{name}}" src="{{img}}" class="sponsor-logo">
+					<img alt="{{name}}" src="{{img}}" class="sponsor-logo" height="53px">
 				</a>
 				<ul class="sponsor-call">
 					{{#each description}}
@@ -57,9 +57,9 @@ referencesOthers: true
 						</li>
 					{{else}}
 						{{#with ../this}}
-						<li class="call-item">
-							<a href="{{website}}">{{../description}}</a>
-						</li>
+							<li class="call-item">
+								<a href="{{website}}">{{../description}}</a>
+							</li>
 						{{/with}}
 					{{/each}}
 				</ul>

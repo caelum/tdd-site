@@ -5,11 +5,16 @@
   padding: 0;
   vertical-align: middle;
   font: inherit;
+  letter-spacing: normal;
 }
 
 ul,
 ol {
 	list-style: none;
+}
+
+a {
+	color: inherit;
 }
 
 a img {
@@ -29,6 +34,12 @@ body {
 	padding-left: 10%;
 }
 
+.container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 .title:first-letter {
 	text-transform: capitalize;
 }
@@ -38,7 +49,7 @@ body {
 }
 
 .text {
-	max-width: 50em;
+	min-width: 320px;
 	text-align: justify;
 	white-space: pre-line;
 }
@@ -46,10 +57,10 @@ body {
 .section-title {
 	font-size: 3em;
 	color: #000;
-	border-left: .3em solid;
-	padding-left: .2em;
 	line-height: 1.2em;
 	margin-bottom: .5em;
+	padding-left: .2em;
+	border-left: .3em solid;
 }
 
 /* header */
@@ -62,8 +73,7 @@ header {
 
 .main-title {
 	display: inline-block;
-	letter-spacing: normal;
-	font-size: 20vmin;
+	font-size: 20vh;
 	vertical-align: middle;
 }
 
@@ -72,7 +82,7 @@ header {
 }
 
 .main-logo {
-	font-size: 2vmin;
+	font-size: 2vh;
 	display: inline-block;
 	text-decoration: none;
 	vertical-align: middle;
@@ -87,33 +97,43 @@ header {
 	display: inline-block;
 	height: 100%;
 	vertical-align: middle;
+	margin-left: 3em;
 }
 
-/*sections*/
+/*intro*/
 
-.section {
+.intro {
+	padding-top: 5em;
+	padding-bottom: 5em;
+	margin-bottom: 1em;
+	background: #FCFCFC;
+}
+
+.intro .title {
+	color: #A9BED9;
+	font-size: 3em;
+	line-height: 1.2em;
+}
+
+/*article sections*/
+
+.articles-section {
 	margin: 5em 0;
 }
 
-.section:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-.section .section-title {
+.articles-section .section-title {
 	float: left;
-	width: 37%;
+	width: 65%;
 	margin-right: 8%;
-	min-width: 220px;
 	max-width: 12em;
+	min-width: 320px;
 }
 
-.section:nth-child(2n+1) .section-title {
+.articles-section:nth-child(2n+1) .section-title {
 	border-left-color: #cdcdcd;
 }
 
-.section:nth-child(2n) .section-title {
+.articles-section:nth-child(2n) .section-title {
 	border-left-color: #3A6099;
 }
 
@@ -122,20 +142,13 @@ header {
 	min-width: 320px;
 }
 
-article {
+.article {
 	margin: 1em 0;
 }
 
 .article-heading {
 	font-size: 1.3em;
 	margin-bottom: .5em;
-}
-
-@media(max-width: 733px) {
-	.section .section-title {
-		width: 65%;
-		min-width: 320px;
-	}
 }
 
 /*participants*/
@@ -147,7 +160,7 @@ article {
 }
 
 .participants .title {
-	color: #ACABAB
+	color: #ACABAB;
 }
 
 footer .section-title {
@@ -193,7 +206,6 @@ footer .section-title {
 	display: inline-block;
 	max-width: 33%;
 	vertical-align: top;
-	letter-spacing: normal;
 }
 
 .sponsor-logo {
@@ -216,9 +228,15 @@ footer .section-title {
 	color: #CFCFCF;
 	font-weight: 400;
 	text-decoration: none;
-	letter-spacing: normal;
 }
 
 .sponsor-box a:hover{
 	text-decoration: underline;
+}
+
+@media(min-width: 733px) {
+	.articles-section .section-title {
+		width: 37%;
+		min-width: 220px;
+	}
 }
