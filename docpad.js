@@ -82,7 +82,11 @@ var docpadConfig = function() {
             .findAllLive({
                 section: {$exists: true},
                 isIntro: {$exists: false}
-            })
+            },
+            function(model) {
+                return model.basename
+            }
+            )
             .on('add', function(model){
                 var collection = docpad.getCollection(model.attributes.section)
                 if(!collection) {
