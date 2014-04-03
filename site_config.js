@@ -4,8 +4,8 @@ var conf = {
 		name: 'Caelum',
 		img: 'img/main-logo.svg'
 	},
-	participants: require('./participants.js'),
-	sponsors: require('./sponsors.js')
+	participants: require('./src/participants.js'),
+	sponsors: require('./src/sponsors.js')
 }
 
 module.exports = conf
