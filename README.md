@@ -113,6 +113,6 @@
 
 - Run locally: ```docpad deploy-ghpages --env static```
 
-- Your can acces it on: http://_yourusername_.github.io/_this-project-name_
+- The site will be available in a url like this: http://yourusername.github.io/this-project-name
 
 - For [custom domain](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) put your ```CNAME``` file in ```src/assets/```
