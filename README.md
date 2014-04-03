@@ -108,4 +108,11 @@
 
     - ```participants``` : Path to the participants file, default is ```participants.js```.
     - ```sponsors``` : Path to the sponsors file, default is ```sponsors.js```.
-  
+
+## Deploy on [github-pages](https://pages.github.com/)
+
+- Run locally: ```docpad deploy-ghpages --env static```
+
+- Your can acces it on: http://_yourusername_.github.io/_this-project-name_
+
+- For [custom domain](https://help.github.com/articles/setting-up-a-custom-domain-with-pages) put your ```CNAME``` file in ```src/assets/```
