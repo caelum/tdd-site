@@ -52,6 +52,7 @@ body {
 	min-width: 320px;
 	text-align: justify;
 	white-space: pre-line;
+	line-height: 1.5;
 }
 
 .section-title {
@@ -113,6 +114,7 @@ header {
 	color: #A9BED9;
 	font-size: 3em;
 	line-height: 1.2em;
+	margin-bottom: .2em;
 }
 
 /*article sections*/
