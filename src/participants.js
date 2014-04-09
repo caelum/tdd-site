@@ -19,7 +19,7 @@ var participants = [
 function gravatar_url_for(email){
 	var md5sum = crypto.createHash('md5')
 	md5sum.update(email)
-	return 'http://gravatar.com/avatar/' + md5sum.read()
+	return 'http://gravatar.com/avatar/' + md5sum.digest('hex')
 }
 
 function parsedParticipants() {
