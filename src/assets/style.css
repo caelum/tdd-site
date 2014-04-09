@@ -197,8 +197,7 @@ footer .section-title {
 /*sponsors*/
 
 .sponsors {
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-top: 3.5em;
 	background: #206297;
 	text-align: center;
 	letter-spacing: 2em;
@@ -206,15 +205,22 @@ footer .section-title {
 
 .sponsor-box {
 	display: inline-block;
+	min-width: 180px;
 	max-width: 33%;
 	vertical-align: top;
 }
 
+.sponsor-box {
+	margin-bottom: 3.5em;
+}
+
 .sponsor-logo {
 	display: block;
-	margin: 7vh auto;
+	margin: 0 auto 2.2vh;
 	text-align: center;
-	height: 53px;
+	height: auto;
+	max-height: 53px;
+	width: auto;
 }
 
 .sponsor-call {
