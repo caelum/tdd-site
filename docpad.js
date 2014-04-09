@@ -34,6 +34,10 @@ var docpadConfig = function() {
                     styles.pop()
 
                     return docpad.getBlock('styles').add(styles).toHTML()
+                },
+
+                getMetas: function(){
+                    return docpad.getBlock('meta').toHTML()
                 }
             }
         }
