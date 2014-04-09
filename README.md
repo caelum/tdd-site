@@ -16,6 +16,8 @@
     ```
 
     This article will be rendered inside a section named foo in the main page.
+    
+  - Articles are ordered alphabetically by its file basename (file name without extensions)
 
   - You can add multiple articles to the same section and diff them with a heading property:
 
