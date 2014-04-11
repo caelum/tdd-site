@@ -15,7 +15,7 @@ referencesOthers: true
 	{{#with intro}}
 		<section class="container intro">
 			<h2 class="title">{{title}}</h2>
-			<article class="text">{{content}}</article>
+			<div class="text">{{{content}}}</div>
 		</section>
 	{{/with}}
 
