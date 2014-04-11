@@ -101,10 +101,7 @@ header {
 	display: inline-block;
 	font-size: 20vh;
 	vertical-align: middle;
-}
-
-.main-title:first-letter {
-	color: #3A6099;
+	color: #7881AC;
 }
 
 .main-logo {
@@ -113,17 +110,21 @@ header {
 	text-decoration: none;
 	vertical-align: middle;
 	opacity: .7;
-	height: 4em;
-	border-right: .2em solid #686868;
 	margin-bottom: 2em;
+}
+
+.main-logo > img,
+.main-logo:after {
+	vertical-align: middle;
 }
 
 .main-logo:after {
 	content: "";
 	display: inline-block;
 	height: 100%;
-	vertical-align: middle;
-	margin-left: 3em;
+	height: 4em;
+	padding-left: 3em;
+	border-right: .2em solid #686868;
 }
 
 /*intro*/
