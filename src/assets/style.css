@@ -3,7 +3,7 @@
 	box-sizing: border-box;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
+  vertical-align: baseline;
   font: inherit;
   letter-spacing: normal;
 }
@@ -53,6 +53,31 @@ body {
 	text-align: justify;
 	white-space: pre-line;
 	line-height: 1.5;
+}
+
+.text b,
+.text strong {
+	font-weight: bold;
+}
+
+.text a {
+	color: #3778CE;
+	text-decoration: none;
+}
+
+.text a:hover {
+	text-decoration: underline;
+}
+
+.text a:visited {
+	color: purple;
+}
+
+.text i,
+.text em {
+	font-style: italic;
+	color: #727272;
+	font-weight: 400;
 }
 
 .section-title {
@@ -188,10 +213,12 @@ footer .section-title {
 	text-align: right;
 	margin-right: 1em;
 	font-weight: 400;
+	vertical-align: middle;
 }
 
 .participant-img {
 	border-radius: 50%;
+	vertical-align: middle;
 }
 
 /*sponsors*/
