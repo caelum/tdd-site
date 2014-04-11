@@ -31,8 +31,11 @@ referencesOthers: true
 
 <footer>
 	<section class='container participants'>
-		<h2 class="title section-title">participantes</h2>
-		<p class="participants-text">Agradecemos a todos os colaboradores que de alguma forma participaram da criação.</p>
+		<h2 class="title section-title">Sobre o Autor</h2>
+
+		<p class="participants-text">Mauricio Aniche é mestre em Ciência da Computação pela Universidade de São Paulo, onde pesquisou sobre os reais efeitos da prática de TDD no design de classes. Atualmente é aluno de doutorado pelo mesmo instituto. Mauricio opta por ter um pé no mundo da indústria e outro no mundo da academia. Já palestrou em diversos eventos da indústria como QCON, Agile Brazil, .NET Architects, e já publicou em conferências acadêmicas nacionais e internacionais como TDD2010 (Paris), Agile 2011 (EUA), WBMA 2011 (Brasil). O mestrado fez mal a ele, já que ele deixou de acreditar em post de blogs e twitters de aficcionados pelas metodologias ágeis.É também autor do livro “TDD: Teste e Design no Mundo Real”, o livro brasileiro mais popular sobre o assunto.</p>
+
+
 		{{#each participants}}
 			<h3 class='title label'>{{name}}</h3>
 			<ul class="participants-list">
@@ -43,7 +46,10 @@ referencesOthers: true
 				{{/each}}
 			</ul>
 		{{/each}}
+		
+
 	</section>
+	
 	<ul class="container sponsors">
 		{{#each sponsors}}
 			<li class="sponsor-box sponsor-{{@index}}">
