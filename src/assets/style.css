@@ -51,8 +51,16 @@ body {
 .text {
 	min-width: 320px;
 	text-align: justify;
-	white-space: pre-line;
 	line-height: 1.5;
+}
+
+.text p,
+.text figure {
+	margin-bottom: 1.5em;
+}
+
+.text figure {
+	font-weight: normal;
 }
 
 .text b,
@@ -78,6 +86,13 @@ body {
 	font-style: italic;
 	color: #727272;
 	font-weight: 400;
+}
+
+.text img,
+.text figure {
+	width: 100%;
+	height: auto;
+	text-align: center;
 }
 
 .section-title {
