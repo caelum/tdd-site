@@ -1,9 +1,9 @@
 var conf = {
-	name: 'quasi',
+	name: 'TDD',
 	company: {
 		name: 'Caelum',
 		img: 'img/main-logo.svg',
-		website: 'http://www.caelum.com.br'
+		website: 'http://www.tddnomundoreal.com.br'
 	},
 	participants: require('./src/participants.js'),
 	sponsors: require('./src/sponsors.js')

@@ -3,15 +3,7 @@ var crypto = require('crypto')
 var participants = [
 	{	name: "organizadores",
 		people: [
-			{name: "Fulano da Silva", email: "fulano@quasi.com"},
-			{name: "Cicrano do Santos", email: "cicrano@quasi.com"}
-		]
-	},
-
-	{	name: "colaboradores",
-		people:	[
-			{name: "Fulano da Silva", email: "fulano@quasi.com"},
-			{name: "Cicrano dos Santos", email: "cicrano@quasi.com"}
+			{name: "Maurício Aniche", email: "mauricio.aniche@caelum.com.br"}
 		]
 	}
 ]
