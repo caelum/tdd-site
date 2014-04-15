@@ -23,7 +23,7 @@ a img {
 
 body {
 	font: 300 100% 'Oxygen', 'sans-serif';
-	color: #686868;
+	color: #575757;
 }
 
 .container {
@@ -49,9 +49,9 @@ body {
 }
 
 .text {
-	min-width: 320px;
 	text-align: justify;
-	line-height: 1.5;
+	line-height: 1.7;
+	font-size: 1.05em;
 }
 
 .text p {
@@ -203,10 +203,11 @@ header {
 
 /*participants*/
 .participants {
-	background: #464646;
+	background: #3E3E3E;
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 5em;
+	color: #ABABAB;
 }
 
 .participants .title {
@@ -219,6 +220,13 @@ footer .section-title {
 
 .participants .label {
 	margin-top: 5em;
+	float: left;
+	background: #2F2E2E;
+	padding: .2em .3em;
+}
+
+.participants .label + * {
+	clear: left;
 }
 
 .participants-text {
@@ -283,7 +291,7 @@ footer .section-title {
 }
 
 .sponsor-box a{
-	color: #CFCFCF;
+	color: #DEDEDE;
 	font-weight: 400;
 	text-decoration: none;
 }
