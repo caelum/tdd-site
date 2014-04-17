@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<meta name="og:title" content="{{site.title}}">
-	<meta name="og:site_name" content="{{site.title}} | {{site.publisher.name}}">
-	<meta name="og:description" content="{{site.description}}">
-	<meta name="og:url" content="{{site.url}}">
-	<meta name="og:type" content="article">
-	<meta name="article:publisher" content="{{site.publisher.facebook_page}}">
+	<meta property="og:title" content="{{site.title}}">
+	<meta property="og:site_name" content="{{site.title}} | {{site.publisher.property}}">
+	<meta property="og:description" content="{{site.description}}">
+	<meta property="og:url" content="{{site.url}}">
+	<meta property="og:type" content="article">
+	<meta property="article:publisher" content="{{site.publisher.facebook_page}}">
 	<!-- TODO authors and time metadata & microdata -->
 	{{{getMetas}}}
 	<title>{{site.title}} | {{site.publisher.name}}</title>
