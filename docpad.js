@@ -45,7 +45,7 @@ var docpadConfig = function() {
         site: require('./site_config.js'),
 
         intro: function(){
-            return docpad.database.findOne({isIntro: true}).toJSON()
+            return docpad.database.findOne({basename: 'site-intro'}).toJSON()
         },
 
         sections: function(){
@@ -76,7 +76,7 @@ var docpadConfig = function() {
             })
             .findAllLive({
                 section: {$exists: true},
-                isIntro: {$exists: false}
+                basename: {$ne: 'site-intro'}
             },
             function(model) {
                 return model.basename
@@ -90,7 +90,13 @@ var docpadConfig = function() {
                 model.setMetaDefaults({write: false})
             })
         }
-    } //END collections
+    }, //END collections
+
+    events: {
+      renderAfter: function(opts){
+        opts.collection.findOne({basename: 'site-intro'}).setMetaDefaults({write: false})
+      }
+    }
 
     }//END config
 
