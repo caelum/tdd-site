@@ -23,7 +23,7 @@ a img {
 
 body {
 	font: 300 100% 'Oxygen', 'sans-serif';
-	color: #686868;
+	color: #575757;
 }
 
 .container {
@@ -49,13 +49,12 @@ body {
 }
 
 .text {
-	min-width: 320px;
 	text-align: justify;
-	line-height: 1.5;
+	line-height: 1.7;
+	font-size: 1.05em;
 }
 
-.text p,
-.text figure {
+.text p {
 	margin-bottom: 1.5em;
 }
 
@@ -88,9 +87,19 @@ body {
 	font-weight: 400;
 }
 
-img,
-figure {
+.text img,
+.text figure {
+	display: block;
+	margin: 1.5em auto;
+	max-width: 100%;
+	height: auto;
 	text-align: center;
+}
+
+.text figure > img {
+	border: 1px solid #EAEAEA;
+	padding: .5em;
+	margin-bottom: .3em;
 }
 
 .section-title {
@@ -158,11 +167,11 @@ header {
 
 /*article sections*/
 
-.articles-section {
+.article-section {
 	margin: 5em 0;
 }
 
-.articles-section .section-title {
+.article-section .section-title {
 	float: left;
 	width: 65%;
 	margin-right: 8%;
@@ -170,21 +179,17 @@ header {
 	min-width: 320px;
 }
 
-.articles-section:nth-child(2n+1) .section-title {
-	border-left-color: #cdcdcd;
+.article-section:nth-child(2n+1) .section-title {
+	border-left-color: #CDCDCD;
 }
 
-.articles-section:nth-child(2n) .section-title {
+.article-section:nth-child(2n) .section-title {
 	border-left-color: #3A6099;
 }
 
 .section-content {
 	overflow: hidden;
 	min-width: 320px;
-}
-
-.article {
-	margin: 1em 0;
 }
 
 .article-heading {
@@ -194,10 +199,11 @@ header {
 
 /*participants*/
 .participants {
-	background: #464646;
+	background: #3E3E3E;
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 5em;
+	color: #ABABAB;
 }
 
 .participants .title {
@@ -210,6 +216,13 @@ footer .section-title {
 
 .participants .label {
 	margin-top: 5em;
+	float: left;
+	background: #2F2E2E;
+	padding: .2em .3em;
+}
+
+.participants .label + * {
+	clear: left;
 }
 
 .participants-text {
@@ -274,7 +287,7 @@ footer .section-title {
 }
 
 .sponsor-box a{
-	color: #CFCFCF;
+	color: #DEDEDE;
 	font-weight: 400;
 	text-decoration: none;
 }
@@ -284,7 +297,7 @@ footer .section-title {
 }
 
 @media(min-width: 733px) {
-	.articles-section .section-title {
+	.article-section .section-title {
 		width: 37%;
 		min-width: 220px;
 	}

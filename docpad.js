@@ -2,8 +2,6 @@
 // http://docpad.org/docs/config
 // Define the DocPad Configuration
 
-var custom_site_config = require('./site_config.js')
-
 var docpadConfig = function() {
 
     var createCollectionFor = function(new_model) {
@@ -44,13 +42,10 @@ var docpadConfig = function() {
     },
 
     templateData: {
-        site: {
-            title: custom_site_config.name,
-            company: custom_site_config.company
-        },
+        site: require('./site_config.js'),
 
         intro: function(){
-            return docpad.database.findOne({isIntro: true}).toJSON()
+            return docpad.database.findOne({basename: 'site-intro'}).toJSON()
         },
 
         sections: function(){
@@ -58,20 +53,16 @@ var docpadConfig = function() {
             docpad.collections.forEach(function(collection){
                 var isArticleSection = collection.options.parentCollection.options.name == 'articles'
                 if(isArticleSection) {
-                    var section = {name: collection.options.name, content: ''}
-                    var articles = collection.toJSON()
-                    articles.forEach(function(article){
-                        section.content += article.contentRendered
-                    })
+                    var section = {name: collection.options.name, articles: collection.toJSON()}
                     sections.push(section)
                 }
             })
             return sections
         },
 
-        participants: custom_site_config.participants,
+        participants: require('./src/participants.js'),
 
-        sponsors: custom_site_config.sponsors
+        sponsors: require('./src/sponsors.js')
 
     },//END templateData
 
@@ -85,7 +76,7 @@ var docpadConfig = function() {
             })
             .findAllLive({
                 section: {$exists: true},
-                isIntro: {$exists: false}
+                basename: {$ne: 'site-intro'}
             },
             function(model) {
                 return model.basename
@@ -96,10 +87,16 @@ var docpadConfig = function() {
                 if(!collection) {
                     createCollectionFor(model)
                 }
-                model.setMetaDefaults({layout: 'article', write: false})
+                model.setMetaDefaults({write: false})
             })
         }
-    } //END collections
+    }, //END collections
+
+    events: {
+      renderAfter: function(opts){
+        opts.collection.findOne({basename: 'site-intro'}).setMetaDefaults({write: false})
+      }
+    }
 
     }//END config
 
