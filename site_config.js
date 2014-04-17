@@ -4,10 +4,10 @@ var conf = {
 
 	description: 'Write about anything',
 
-	url: 'http://tdd.caelum.com.br',
+	url: 'http://tdd.caelum.com.br/',
 
 	img: function() {
-		return this.publisher.img
+		return this.url + this.publisher.img
 	},
 
 	publisher: {
