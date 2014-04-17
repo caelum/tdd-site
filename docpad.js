@@ -58,11 +58,7 @@ var docpadConfig = function() {
             docpad.collections.forEach(function(collection){
                 var isArticleSection = collection.options.parentCollection.options.name == 'articles'
                 if(isArticleSection) {
-                    var section = {name: collection.options.name, content: ''}
-                    var articles = collection.toJSON()
-                    articles.forEach(function(article){
-                        section.content += article.contentRendered
-                    })
+                    var section = {name: collection.options.name, articles: collection.toJSON()}
                     sections.push(section)
                 }
             })
@@ -96,7 +92,7 @@ var docpadConfig = function() {
                 if(!collection) {
                     createCollectionFor(model)
                 }
-                model.setMetaDefaults({layout: 'article', write: false})
+                model.setMetaDefaults({write: false})
             })
         }
     } //END collections

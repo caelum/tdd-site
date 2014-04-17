@@ -167,11 +167,11 @@ header {
 
 /*article sections*/
 
-.articles-section {
+.article-section {
 	margin: 5em 0;
 }
 
-.articles-section .section-title {
+.article-section .section-title {
 	float: left;
 	width: 65%;
 	margin-right: 8%;
@@ -179,21 +179,17 @@ header {
 	min-width: 320px;
 }
 
-.articles-section:nth-child(2n+1) .section-title {
-	border-left-color: #cdcdcd;
+.article-section:nth-child(2n+1) .section-title {
+	border-left-color: #CDCDCD;
 }
 
-.articles-section:nth-child(2n) .section-title {
+.article-section:nth-child(2n) .section-title {
 	border-left-color: #3A6099;
 }
 
 .section-content {
 	overflow: hidden;
 	min-width: 320px;
-}
-
-.article {
-	margin: 1em 0;
 }
 
 .article-heading {
@@ -301,7 +297,7 @@ footer .section-title {
 }
 
 @media(min-width: 733px) {
-	.articles-section .section-title {
+	.article-section .section-title {
 		width: 37%;
 		min-width: 220px;
 	}

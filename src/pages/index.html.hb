@@ -10,25 +10,25 @@ referencesOthers: true
 		{{site.title}}
 	</h1>
 </header>
-
 <main>
 	{{#with intro}}
 		<section class="container intro">
-			<h2 class="title">{{title}}</h2>
+			<h1 class="title">{{title}}</h1>
 			<div class="text">{{{content}}}</div>
 		</section>
 	{{/with}}
-
 	{{#each sections}}
-		<section class="container articles-section">
-			<h2 class="title section-title">{{name}}</h2>
-			<div class="section-content">
-				{{{content}}}
+		<section class="container article-section">
+			<h1 class="title section-title">{{name}}</h2>
+			<div class="section-content text">
+				{{#each articles}}
+					<h2 class="title label article-heading">{{heading}}</h3>
+					{{{content}}}
+				{{/each}}
 			</div>
 		</section>
 	{{/each}}
 </main>
-
 <footer>
 	<section class='container participants'>
 		<h2 class="title section-title">participantes</h2>
