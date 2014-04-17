@@ -3,8 +3,8 @@ layout: page
 referencesOthers: true
 ---
 <header class="container">
-	<a class="main-logo" href="{{site.company.website}}">
-		<img style="width: 21.2vh" src="{{site.company.img}}" alt="{{site.company.name}}">
+	<a class="main-logo" href="{{site.publisher.website}}">
+		<img style="width: 21.2vh" src="{{site.publisher.img}}" alt="{{site.publisher.name}}">
 	</a>
 	<h1 class="title main-title" style="margin-top: -.2em; margin-left: -.05em;">
 		{{site.title}}

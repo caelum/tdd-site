@@ -2,8 +2,6 @@
 // http://docpad.org/docs/config
 // Define the DocPad Configuration
 
-var custom_site_config = require('./site_config.js')
-
 var docpadConfig = function() {
 
     var createCollectionFor = function(new_model) {
@@ -44,10 +42,7 @@ var docpadConfig = function() {
     },
 
     templateData: {
-        site: {
-            title: custom_site_config.name,
-            company: custom_site_config.company
-        },
+        site: require('./site_config.js'),
 
         intro: function(){
             return docpad.database.findOne({isIntro: true}).toJSON()
@@ -65,9 +60,9 @@ var docpadConfig = function() {
             return sections
         },
 
-        participants: custom_site_config.participants,
+        participants: require('./src/participants.js'),
 
-        sponsors: custom_site_config.sponsors
+        sponsors: require('./src/sponsors.js')
 
     },//END templateData
 
