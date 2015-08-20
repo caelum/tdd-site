@@ -4,7 +4,7 @@
 
 var docpadConfig = function() {
 
-    var createCollectionFor = function(new_model) {
+    var createCollectionFor = function(new_model, docpad) {
         docpad.setCollection(new_model.attributes.section,
             docpad.getCollection('articles')
             .findAllLive({
@@ -31,11 +31,11 @@ var docpadConfig = function() {
                     //removing hash object
                     styles.pop()
 
-                    return docpad.getBlock('styles').add(styles).toHTML()
+                    return this.getBlock('styles').add(styles).toHTML()
                 },
 
                 getMetas: function(){
-                    return docpad.getBlock('meta').toHTML()
+                    return this.getBlock('meta').toHTML()
                 }
             }
         }
@@ -45,18 +45,14 @@ var docpadConfig = function() {
         site: require('./site_config.js'),
 
         intro: function(){
-            return docpad.database.findOne({basename: 'site-intro'}).toJSON()
+            return this.getDatabase().findOne({basename: 'site-intro'}).toJSON()
         },
 
         sections: function(){
             var sections = []
-            docpad.collections.forEach(function(collection){
-                var isArticleSection = collection.options.parentCollection.options.name == 'articles'
-                if(isArticleSection) {
-                    var section = {name: collection.options.name, articles: collection.toJSON()}
-                    sections.push(section)
-                }
-            })
+            var collection = this.getCollection('articles')
+            var section = {name: collection.options.name, articles: collection.toJSON()}
+            sections.push(section)
             return sections
         },
 
@@ -68,6 +64,7 @@ var docpadConfig = function() {
 
     collections: {
         articles: function(){
+            var docpad = this;
             return docpad.getCollection('html')
             .setFilter('isInArticles', function(model){
                 var isIn = model.attributes.fullPath.substr((__dirname+'/src/').length)
@@ -85,7 +82,7 @@ var docpadConfig = function() {
             .on('add', function(model){
                 var collection = docpad.getCollection(model.attributes.section)
                 if(!collection) {
-                    createCollectionFor(model)
+                    createCollectionFor(model, docpad)
                 }
                 model.setMetaDefaults({write: false})
             })
