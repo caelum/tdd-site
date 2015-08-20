@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta property="og:title" content="TDD">
+	<meta property="og:site_name" content="TDD | ">
+	<meta property="og:description" content="Test-Driven Development (TDD) é uma das mais populares práticas ágeis de desenvolvimento de software. Mas com certeza uma das quais as pessoas mais tem dúvidas. A ideia deste site é explicar TDD para não-técnicos. Quais as vantagens? Serei mais produtivo? Essas e outras perguntas são respondidas aqui.">
+	<meta property="og:url" content="http://tdd.caelum.com.br/">
+	<meta property="og:type" content="article">
+	<meta property="article:publisher" content="https://www.facebook.com/caelumbr">
+	<!-- TODO authors and time metadata & microdata -->
+	<meta name="generator" content="DocPad v6.78.1" />
+	<title>TDD | Caelum</title>
+	<link  rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700" /><link  rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header class="container">
+	<a class="main-logo" href="http://www.caelum.com.br">
+		<img style="width: 21.2vh" src="img/main-logo.svg" alt="Caelum">
+	</a>
+	<h1 class="title main-title" style="margin-top: -.2em; margin-left: -.05em;">
+		TDD
+	</h1>
+</header>
+<main>
+	
+		<section class="container intro">
+			<h1 class="title">Test-Driven Development</h1>
+			<div class="text"><p>
+Test-Driven Development (TDD), sem dúvida, tornou-se uma das práticas mais populares entre 
+desenvolvedores de software. A ideia é bem simples: escreva seus testes antes mesmo de escrever o 
+código de produção. Mas por quê a ideia parece tão boa? Ao escrever os testes antes, o desenvolvedor 
+garante que boa parte (ou talvez todo) do seu sistema tem um teste que garante o seu funcionamento. 
+Além disso, muitos desenvolvedores também afirmam que os testes os guiam no projeto de classes do sistema.
+</p>
+
+<p>
+Mesmo com toda a indústria gritando as vantagens para quem queira ouvir, ainda existem 
+mitos em torno da prática. <i>O desenvolvedor agora vai gastar mais tempo escrevendo 
+testes do que programando? Escrever testes dá trabalho. Testes manuais não são mais 
+produtivos? TDD deve ser feito 100% do tempo?</i>
+</p>
+
+<p>
+Este guia visa responder essas e outras perguntas para você, que é desenvolvedor, gerente, 
+ou está de alguma forma relacionado ao processo de desenvolvimento de software.
+</p></div>
+		</section>
+	
+	
+		<section class="container article-section">
+			<h1 class="title section-title">articles</h2>
+			<div class="section-content text">
+				
+					<h2 class="title label article-heading">O que eu ganho com a prática?</h3>
+					<p>
+A prática de TDD agrega muitos benefícios ao processo de desenvolvimento. O primeiro deles, e mais claro, são os benefícios na qualidade externa do produto.  Todos já sofremos os problemas de uma nova versão do produto que traz novas funcionalidades, mas faz as anteriores pararem de funcionar. A bateria de testes automatizados gerados pela prática dão mais segurança ao desenvolvedor na hora de mudanças.
+</p>
+
+<p>
+Os testes automatizados, que rodam em questão de segundos, são executados o tempo todo pelo desenvolvedor. Isso quer dizer que podemos executá-los o dia todo, muitas vezes por dia. Algo que sabemos ser impossível com testes manuais. Caso algo pare de funcionar, o desenvolvedor é rapidamente notificado, e consegue corrigir o problema antes de mandar a versão para o cliente. E todos nós sabemos o quanto é bom não estressar o usuário final com bugs, não é verdade?
+</p>
+
+<p>
+Além disso, muitos autores populares da área afirmam que, caso o desenvolvedor saiba ler o código de testes com atenção, esse mesmo código pode dar informações importantes sobre a qualidade do código que está sendo produzido. Dizemos que a prática de TDD ajuda o desenvolvedor a escrever código de produção de qualidade. É difícil explicar esses efeitos em poucas palavras, mas a ideia geral é que <i>se está difícil escrever um teste automatizado, é porque provavelmente o código de produção está complicado</i>. Essa é uma ótima dica para o desenvolvedor.
+</p>
+
+<p>
+Perceba então que o uso da prática de TDD ajuda a equipe a garantir que os requisitos funcionam como esperado, e também auxilia o desenvolvedor a perceber problemas de código em suas implementações. Dois coelhos em uma cajadada só.
+</p>
+				
+					<h2 class="title label article-heading">Devo praticar TDD 100% do tempo?</h3>
+					<p>
+A resposta para essa pergunta serve para toda e qualquer prática de engenharia de software. <b>É claro que não.</b>
+</p>
+
+<p>
+Como já discutido anteriormente, TDD faz com que o desenvolvedor teste melhor sua aplicação, bem como pense em um design de classes melhor e mais flexível para aquele problema. Mas não é sempre que precisamos disso. Se estamos, por exemplo, escrevendo a implementação de um DAO (classe que se comunica com o banco de dados), talvez escrever os testes antes não vá ajudar tanto, afinal não há grandes decisões de design a serem tomadas em classes como essa, e a funcionalidade tende a ser simples. Escrever o teste depois, portanto, não será tão diferente de escrever o teste antes.
+</p>
+
+<p>
+O desenvolvedor maduro leva em consideração a sua experiência, e entende bem as vantagens da prática. E, na hora certa, fazer uso dela.
+</p>
+				
+					<h2 class="title label article-heading">Qual a diferença entre fazer TDD e escrever o teste depois?</h3>
+					<p>
+Se pararmos para analisar, o grande responsável pelo aumento da qualidade interna e externa não é o TDD, mas sim o teste automatizado, produzido perante o uso da prática. A pergunta comum é justamente então: <i>Qual a diferença entre fazer TDD e escrever o teste depois?</i>
+</p>
+
+<p>
+O desenvolvedor	obtém feedback do teste. A diferença é justamente na quantidade de feedback. Quando o desenvolvedor escreve os testes somente ao acabar a implementação do código de produção, ele passou muito tempo sem retorno. Afinal, escrever o código de produção leva tempo. Ao praticar TDD, o desenvolvedor divide seu trabalho em pequenas etapas. Ele escreve um pequeno teste, e implementa um pedaço da funcionalidade. E repete. A cada teste escrito, o desenvolvedor ganha feedback.
+</p>
+
+<p>
+Quanto mais cedo o desenvolvedor receber feedback, melhor. Quando se tem muito código já escrito, mudanças podem ser trabalhosas e custar caro.Ao contrário, quanto menos código escrito, menor será o custo de mudança. E é justamente isso que acontece com praticantes de TDD: eles recebem feedback no momento em que mudar ainda é barato.
+</p>
+
+<p>
+A figura abaixo exemplifica a diferença entre a quantidade de feedback de um desenvolvedor que pratica TDD e de um desenvolvedor que escreve testes ao final.
+</p>
+
+<img src="http://s3-sa-east-1.amazonaws.com/tdd-site/feedback.png" />
+				
+					<h2 class="title label article-heading">Como funciona?</h3>
+					<p>
+A mecânica da prática é simples: escreva um teste que falha, faça-o passar da maneira mais simples possível e, por fim, refatore o código. Esse ciclo é conhecido como <b>Ciclo Vermelho-Verde-Refatora</b>.
+</p>
+
+<img src="http://s3-sa-east-1.amazonaws.com/tdd-site/ciclo.jpg" />
+
+<p>
+Sempre que um desenvolvedor pega uma funcionalidade para fazer, ele a quebra (muitas vezes mentalmente) em pequenas tarefas. Tarefas essas que exigem a escrita de código. Classes são criadas, outras são modificadas. Todas essas modificações tem um propósito, claro. Todo código escrito tem um objetivo.
+</p>
+
+<p>
+Ao praticar TDD, o desenvolvedor antes de começar a fazer essas modificações explicita esses objetivos. Só que ele faz isso por meio de testes automatizados. O teste em código nada mais é do que um trecho de código que deixa claro o que determinado trecho de código deve fazer.
+</p>
+
+<p>
+Ao formalizar esse objetivo na forma de um teste automatizado, esse teste falha, claro; afinal, a funcionalidade ainda não foi implementada. O desenvolvedor então trabalha para fazer esse teste passar. Como? Implementando a funcionalidade.
+</p>
+
+<p>
+Assim que o teste passar, o desenvolvedor então parte para uma próxima etapa no ciclo, importantíssima para aqueles que tem o sonho de produzir código de qualidade: a hora da refatoração. Refatorar é melhorar o código que já está escrito. A cabeça do desenvolvedor é complicada: quando ele está focado em implementar a funcionalidade, ele raramente está pensando também em qualidade de código. Não tem jeito, é assim que funcionamos. E justamente por isso que, após a implementação da funcionalidade, o desenvolvedor para e melhora a qualidade do código (que já funciona e atende ao requisito do negócio).
+</p>
+
+<p>
+Acabou? Claro que não. Agora é partir para a próxima funcionalidade. E começando por onde? Pelo teste.
+</p>
+				
+					<h2 class="title label article-heading">Serei mais ou menos produtivo?</h3>
+					<p>
+Assim como muitas das práticas ágeis, é difícil ver os benefícios quando não se faz uso dela. A primeira reação da maioria das pessoas é: <i>"Mas agora eu gastarei boa parte do meu tempo escrevendo testes? Isso não pode ser produtivo!"</i>
+</p>
+
+<p>
+A resposta para a pergunta é: <b>sim, o desenvolvedor gastará boa parte do seu tempo escrevendo código de testes</b>. Mas isso não quer dizer que ele seja menos produtivo por causa disso.
+</p>
+
+<p>
+Antes de partir para argumentos, é necessário definirmos o que é ser produtivo. Para muitos, produtividade é simplesmente a quantidade de linhas de código de produção que são escritas por dia. Aqui, a definição de produtividade será linhas de código escritas com qualidade, de fácil manutenção, e que dão pouca (ou nada) de re-trabalho.
+</p>
+
+<p>
+Para compararmos as vantagens da escrita de testes automatizados, usarei o contra-exemplo: o teste manual. O dia-a-dia do desenvolvedor que faz teste manual é algo parecido com isso: ele programa a funcionalidade (geralmente toda ela de uma vez) e roda a aplicação. Com a aplicação de pé, ele faz o primeiro teste manual, navegando pela aplicação e digitando os diversos dados de entrada necessários para fazer o teste. Muito provavelmente o software não funcionará de acordo. 
+</p>
+
+<p>
+Ele então é obrigado a procurar pelo problema, lendo as 300 linhas de código que escreveu, ou mesmo debuggando. Debugar é a atividade onde o desenvolvedor executa linha por linha de código e vê o resultado. Ambas as atividades claramente desperdiçam um tempo imenso do desenvolvedor.
+</p>
+
+<p>
+Em algum momento, o desenvolvedor encontrará o problema. Ele o corrijirá, e aí repetirá todo o processo: subirá a aplicação e fará o teste manual. Muito provavelmente outro problema aparecerá. Dessa vez em um ponto mais adiante da regra de negócio, claro. Ele então novamente repetirá o processo.
+</p>
+
+<p>
+Veja o quanto isso é demorado e caro. O desenvolvedor que faz teste manual repete o mesmo teste várias vezes por dia. O desenvolvedor que o automatiza gasta seu tempo apenas uma vez. Na próxima vez, o teste será executado pela máquina em poucos milissegundos.
+</p>
+
+<p>
+Mais ainda, sempre que o desenvolvedor precisar testar novamente no futuro, ele o fará de maneira manual, gastando tempo. Já o desenvolvedor que tem testes automatizados, apenas executará sua bateria de testes. Ela durará pra sempre e poderá ser executada quantas vezes quiser.
+</p>
+
+<p>
+Ou seja, o desenvolvedor que escreve testes automatizados gasta tempo com isso. Mas ele gasta tempo de maneira inteligente. Hoje, o desenvolvedor que faz teste manual também gasta muito tempo com testes, mas de maneira errada, improdutiva. A médio prazo, esse desenvolvedor gastará mais tempo testando a mesma funcionalidade do que o que foi esperto e os automatizou desde o começo. É tudo uma questão de pensar a médio prazo.
+</p>
+				
+					<h2 class="title label article-heading">Alguém já fez estudos formais sobre isso?</h3>
+					<p>
+É difícil acreditar em tudo que foi dito até agora, não? Pois bem, é para isso que servem trabalhos científicos. Para que fatos sejam separados de meros folclores.
+</p>
+
+<p>
+Podemos separar estudos sobre TDD em 2 categorias diferentes. Aqueles que olham TDD como uma prática de teste de software, e por consequência avaliam os efeitos dele na qualidade externa do software; e aqueles que olham TDD como uma prática de design e estão preocupados com os efeitos dele na qualidade interna do sistema.
+</p>
+
+<p>
+Nos últimos anos, a comunidade acadêmica vem rodando diversos experimentos para tentar mostrar de maneira empírica que TDD realmente ajuda no processo de desenvolvimento de software. Alguns desses estudos são feitos por professores bastante conhecidos na comunidade, como a <a href="http://collaboration.csc.ncsu.edu/laurie/">prof. Laurie Williams</a> (North Carolina State University) e o <a href="http://users.csc.calpoly.edu/~djanzen/">prof. David Janzen</a> (California Polytechnic State University).
+</p>
+
+<p>
+Esses estudos nos mostram que desenvolvedores que praticam TDD gastam menos tempo debugando, escrevem mais testes automatizados para uma funcionalidade, e defeitos são encontrados mais rapidamente, do que por aqueles que não praticam TDD. Em termos de qualidade interna, os estudos mostram que os desenvolvedores tem uma forte percepção de que a prática os ajuda a pensar melhor sobre seu projeto de classes. 
+</p>
+
+<p>
+Você pode ler muitos desses estudos com mais detalhes em um post do meu blog, chamado <a href="http://www.aniche.com.br/2010/04/tdd-realmente-ajuda/">TDD Realmente Ajuda?</a>.
+</p>
+				
+					<h2 class="title label article-heading">Como treinar minha equipe?</h3>
+					<p>
+Muitas vezes a melhor maneira de introduzir uma nova prática de desenvolvimento para a equipe é trazendo alguém com mais experiência sobre o assunto, para ensinar, discutir e buscar a melhor maneira para introduzi-la no processo atual de desenvolvimento de software.
+</p>
+
+<p>
+A Caelum oferece treinamentos online e presencial sobre o assunto. Os cursos oferecidos, bem como as ementas, podem ser vistas na página da <a href="http://www.alura.com.br/trilha/testes">trilha de testes do Alura</a>, o portal de ensino a distância da Caelum.
+</p>
+
+<p>
+Maurício Aniche também é palestrante sobre o assunto nos mais diversos eventos brasileiros de desenvolvimento de software, como QCON e Agile Brazil. Ele também dá workshops sobre o assunto para empresas privadas e públicas.
+</p>
+
+<p>
+<a href="mailto:mauricio.aniche@caelum.com.br">Entre em contato</a>.
+</p>
+				
+					<h2 class="title label article-heading">Onde posso ler mais sobre isso?</h3>
+					<p>
+Livros sobre TDD, apesar de não serem muitos, são bons. Todos são bastante técnicos, e devem ser lidos apenas por desenvolvedores.
+</p>
+
+<p>
+O primeiro livro sobre o assunto, escrito pelo Kent Beck, <a href="http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530">Test-Driven Development: By Example</a> é um livro para iniciantes. Ao longo dele, o autor desenvolve duas classes do começo ao fim, e explica passo-a-passo como TDD é feito. Os exemplos são bem minimalistas, mas é um excelente primeiro contato com a prática.
+</p>
+
+<p>
+Outro livro importante para aqueles que querem se aprofundar é o <a href="http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627">Growing Object-Oriented Software, Guided by Tests</a>, escritos pelos excelentíssimos autores Steve Freeman e Nat Pryce. Esse é um livro mais pesado; os exemplos são maiores e eles discutem bastante sobre como uma aplicação do zero deve ser criada a partir da prática de TDD. Apesar dos exemplos fazerem uso de Swing, e o leitor encontra por muitas vezes extensas listas de código, é um livro que vale a pena ser lido, caso o desenvolvedor seja mais maduro.
+</p>
+
+<p>
+Um livro menos popular, mas também interessante é o <a href="http://www.amazon.com/Test-Driven-Development-Practical-Guide/dp/0131016490">Test-Driven Development: A Practical Guide</a>, do Dave Astels. Ele também dá exemplo de uma aplicação do zero, e introduz conceitos interessantes como Mock Objects.
+</p>
+
+<p>
+Além disso, o primeiro livro em português brasileiro sobre o assunto, <a href="http://www.tddnomundoreal.com.br">TDD: Teste e Design no Mundo Real</a>, escrito por Maurício Aniche, é uma boa opção para aqueles que querem ver no mesmo livro, exemplos básicos para quem está começando, e exemplos mais avançados sobre a relação entre TDD e design de classes. O livro foi baseado em sua pesquisa de mestrado sobre o assunto.
+</p>
+
+<p>
+Existe também muito material informal sobre o assunto. O próprio <a href="http://www.aniche.com.br">blog do Aniche</a>, e o <a href="blog.caelum.com.br">blog da Caelum</a> possuem bons textos. Abaixo uma pequena relação desses posts:
+</p>
+
+<p>
+<a href="http://www.aniche.com.br/2014/02/perguntas-e-respostas-sobre-tdd/">Perguntas e Respostas sobre TDD</a>
+<br/>
+<a href="http://www.aniche.com.br/2013/09/bate-papo-sobre-tdd-na-caelum/">Bate papo sobre TDD na Caelum</a>
+<br/>
+<a href="http://www.aniche.com.br/2013/04/dependencia-de-cenarios-em-testes-de-sistema/">Dependência de cenários em testes de sistema</a>
+<br/>
+<a href="http://www.aniche.com.br/2013/04/quantidade-de-asserts-no-teste/">Quantidade de Asserts no Teste</a>
+<br/>
+<a href="http://www.aniche.com.br/2011/09/testando-datas-e-metodos-estaticos/">Testando datas e métodos estáticos</a>
+<br/>
+<a href="http://www.aniche.com.br/2011/02/sera-que-eu-preciso-de-100-de-cobertura-de-testes/">Será que eu preciso de 100% de cobertura de código?</a>
+<br/>
+<a href="http://www.aniche.com.br/2011/01/um-pequeno-estudo-sobre-assercoes-em-testes/">Um pequeno estudo sobre asserções em testes</a>
+<br/>
+<a href="http://www.aniche.com.br/2010/12/eh-tdd-e-nao-ddt/">É TDD, e não DDT</a>
+<br/>
+<a href="http://blog.caelum.com.br/criando-cenarios-de-teste-com-fixture-factory/">Criando cenários de teste com Fixture Factory</a>
+<br/>
+<a href="http://blog.caelum.com.br/o-que-a-quantidade-de-asserts-em-um-teste-nos-diz-sobre-o-codigo/">O que a quantidade de asserts em um teste nos diz sobre o código?</a>
+<br/>
+<a href="http://blog.caelum.com.br/facilitando-a-manutencao-dos-testes-ao-diminuir-o-acoplamento-com-o-codigo/">Facilitando a manutenção dos testes ao diminuir o acoplamento com o código</a>
+<br/>
+<a href="http://blog.caelum.com.br/tdd-e-sua-influencia-no-acoplamento-e-coesao/">TDD e sua influência no acoplamento e coesão</a>
+<br/>
+<a href="http://blog.caelum.com.br/perdendo-ou-ganhando-tempo-com-testes-de-unidade/">Ganhando ou perdendo tempo com testes de unidade</a>.
+</p>
+
+<p>
+Além disso, Maurício Aniche também tem diversas <a href="http://www.aniche.com.br/publications">publicações científicas</a> sobre o assunto.
+</p>
+				
+					<h2 class="title label article-heading">Versões do documento</h3>
+					<p>
+<i>Abril/2014:</i> Versão inicial do documento.
+</p>
+				
+			</div>
+		</section>
+	
+</main>
+<footer>
+	<section class='container participants'>
+		<h2 class="title section-title">Sobre o Autor</h2>
+
+		<p class="participants-text">Maurício Aniche é mestre em Ciência da Computação pela Universidade de São Paulo, onde pesquisou sobre os reais efeitos da prática de TDD no design de classes. Atualmente é aluno de doutorado pelo mesmo instituto. Mauricio opta por ter um pé no mundo da indústria e outro no mundo da academia. Já palestrou em diversos eventos da indústria como QCON, Agile Brazil, .NET Architects, e já publicou em conferências acadêmicas nacionais e internacionais como TDD2010 (Paris), Agile 2011 (EUA), WBMA 2011 (Brasil). O mestrado fez mal a ele, já que ele deixou de acreditar em post de blogs e twitters de aficcionados pelas metodologias ágeis.É também autor do livro “TDD: Teste e Design no Mundo Real”, o livro brasileiro mais popular sobre o assunto.</p>
+
+
+		
+			<h3 class='title label'>organizadores</h3>
+			<ul class="participants-list">
+				
+					<li class="participant">
+						<span class="participant-name">Maurício Aniche</span>
+						<img class="participant-img" src="http://gravatar.com/avatar/1b70b110f1795c1b03f78d70a20549f7" width="80px" height="80px">
+				
+			</ul>
+		
+		
+
+	</section>
+	
+	<ul class="container sponsors">
+		
+			<li class="sponsor-box sponsor-0">
+				<a href="http://www.alura.com.br" class="sponsor-logo">
+					<img alt="Alura" src="img/alura-logo.png" class="sponsor-logo" height="53px">
+				</a>
+				<ul class="sponsor-call">
+					
+						
+							<li class="call-item">
+								<a href="http://www.alura.com.br">Cursos online de tecnologia</a>
+							</li>
+						
+					
+				</ul>
+			</li>
+		
+			<li class="sponsor-box sponsor-1">
+				<a href="http://www.caelum.com.br" class="sponsor-logo">
+					<img alt="Caelum" src="img/caelum-logo.png" class="sponsor-logo" height="53px">
+				</a>
+				<ul class="sponsor-call">
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/cursos/java/">Curso de Java</a>
+						</li>
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/curso-android/">Curso de Android</a>
+						</li>
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/curso-javascript-jquery/">Curso de JavaScript</a>
+						</li>
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/cursos/dotnet/">Curso de .NET</a>
+						</li>
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/cursos/agile/">Curso de Agile</a>
+						</li>
+					
+						<li class="call-item">
+							<a href="http://www.caelum.com.br/curso-html-css-javascript/">Curso de HTML e CSS</a>
+						</li>
+					
+				</ul>
+			</li>
+		
+			<li class="sponsor-box sponsor-2">
+				<a href="http://www.casadocodigo.com.br" class="sponsor-logo">
+					<img alt="Casa do Código" src="img/cdc-logo.png" class="sponsor-logo" height="53px">
+				</a>
+				<ul class="sponsor-call">
+					
+						
+							<li class="call-item">
+								<a href="http://www.casadocodigo.com.br">Conheça também os livros da Casa do Código</a>
+							</li>
+						
+					
+				</ul>
+			</li>
+		
+	</ul>
+</footer>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-270161-23', 'caelum.com.br');
+	  ga('send', 'pageview');
+
+	</script>
+	
+</body>
+</html>
